@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECC006 – Homework #2 | ISOC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 0.4rem;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #7dd3fc; }
+
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #38bdf8;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card h2 .badge {
+      background: #0ea5e9;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .card a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    .card a:hover { text-decoration: underline; }
+
+    .highlight-box {
+      background: #0f2744;
+      border-left: 3px solid #38bdf8;
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: #bae6fd;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #475569;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <a class="back-link" href="index.html">← Back to Homepage</a>
+
+    <header>
+      <h1>ECC006 – Homework #2</h1>
+      <p>Internet Society (ISOC) Research — Web Development Course</p>
+    </header>
+
+    <!-- Question A -->
+    <div class="card">
+      <h2><span class="badge">a</span> Why was the Internet Society created?</h2>
+      <p>
+        The Internet Society (ISOC) was founded in 1992 by internet pioneers Vint Cerf, Bob Kahn, and Lyman Chapin.
+        It was created as a professional, non-governmental organization to facilitate, support, and promote the evolution
+        and growth of the Internet as a global research and communications infrastructure.
+      </p>
+      <div class="highlight-box">
+        Two key motivations at founding: (1) preserving and archiving Internet documentation and standards,
+        and (2) expanding global awareness of the Internet at a time when most people had never heard of it.
+      </div>
+      <p style="margin-top:0.8rem;">
+        Today, ISOC's mission remains to promote the <strong>open development, evolution, and use</strong> of the
+        Internet for the benefit of all people worldwide. It supports open standards, digital access, Internet security,
+        and policy advocacy.
+      </p>
+    </div>
+
+    <!-- Question B -->
+    <div class="card">
+      <h2><span class="badge">b</span> Closest Local Chapter</h2>
+      <p>
+        Since I am based in <strong>Mersin, Turkey</strong>, the closest ISOC chapter is the
+        <strong>Internet Society Turkey Chapter (ISOC-TR)</strong>, also known as İnternet Derneği.
+      </p>
+      <div class="highlight-box">
+        🌐 Website: <a href="http://isoc.org.tr" target="_blank">http://isoc.org.tr</a>
+      </div>
+      <p style="margin-top:0.8rem;">
+        One activity provided by the Turkey Chapter is publishing an
+        <strong>Internet Terminology Dictionary</strong> (İnternet Terimleri Sözlüğü) in Turkish,
+        helping local communities better understand internet concepts and standards in their native language.
+        The chapter also participates in Internet governance events and educational initiatives across Turkey.
+      </p>
+    </div>
+
+    <!-- Question C -->
+    <div class="card">
+      <h2><span class="badge">c</span> How to Join ISOC & My Recommendation</h2>
+      <p>
+        Joining the Internet Society is straightforward: visit
+        <a href="https://isoc.org/become-a-member/" target="_blank">isoc.org/become-a-member</a>,
+        fill out the online application form, and select a local chapter (e.g., Turkey Chapter).
+        You will receive a confirmation email with your membership details.
+      </p>
+      <div class="highlight-box">
+        💰 Cost: <strong>Free</strong> — individual membership has no fees. Anyone, anywhere can join.
+      </div>
+      <p style="margin-top:0.8rem;">
+        <strong>My recommendation:</strong> Yes, I would encourage a beginning web developer to join ISOC.
+        Even as a newcomer, membership gives you access to webinars, e-learning resources, global networking
+        opportunities, and the ability to stay informed about internet standards and policy — all of which
+        are directly relevant to a career in web development. Since it costs nothing, there is no reason not to join.
+      </p>
+    </div>
+
+    <footer>
+      <p>Written for ECC006 Web Development Course &nbsp;·&nbsp; Homework Assignment #2</p>
+    </footer>
+
+  </div>
+</body>
+</html>
