@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 8 - Question 2: Web Page Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #999;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        table th, table td {
+            border: 1px solid #999;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #cccccc;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #0052a3;
+        }
+
+        .page-type {
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Homework 8 - Question 2: Web Page Analysis</h1>
+    <p style="text-align: center; color: #666;">Analysis of Two Web Pages: One Appealing and One Unappealing</p>
+
+    <!-- APPEALING PAGE: INSTAGRAM -->
+    <h2>Page 1: Instagram (Appealing)</h2>
+    <div class="page-type">✓ This page is APPEALING</div>
+
+    <table>
+        <tr>
+            <td><strong>a. URL of the Website</strong></td>
+            <td><a href="https://www.instagram.com" target="_blank">https://www.instagram.com</a></td>
+        </tr>
+        <tr>
+            <td><strong>b. Does this page use tables?</strong></td>
+            <td>No, Instagram does not use traditional HTML tables. Instead, it uses CSS Grid and Flexbox for layout. This is a modern approach that provides better responsive design and flexibility compared to traditional table-based layouts. The page layout is organized through CSS styling rather than table structures.</td>
+        </tr>
+        <tr>
+            <td><strong>c. Does this page use CSS?</strong></td>
+            <td>Yes, Instagram extensively uses CSS. The purpose of CSS on Instagram includes: (1) Page layout - organizing the grid of photos, stories, and feed elements, (2) Text and color configuration - styling fonts, colors, spacing, and visual hierarchy, (3) Responsive design - adapting the layout to different screen sizes (mobile, tablet, desktop), (4) Visual effects - animations, hover states, and interactive elements.</td>
+        </tr>
+        <tr>
+            <td><strong>d. Is this page appealing? List three reasons</strong></td>
+            <td><strong>Reason 1:</strong> Clean and intuitive user interface - The layout is simple and easy to navigate. Users can quickly find what they're looking for (feed, stories, messages, etc.) without confusion. <br><br><strong>Reason 2:</strong> Visually attractive design - The use of white space, consistent color scheme, and high-quality images creates an aesthetically pleasing experience. Photos are displayed prominently and beautifully. <br><br><strong>Reason 3:</strong> Responsive and fast performance - The page loads quickly and adapts seamlessly to different devices (phones, tablets, computers). The interactive elements (like, comment buttons) are smooth and responsive.</td>
+        </tr>
+        <tr>
+            <td><strong>e. N/A</strong></td>
+            <td>This page is appealing, so improvements are not needed for this analysis. However, potential enhancements could include: more customization options for user feeds, better notification management, or enhanced privacy controls.</td>
+        </tr>
+    </table>
+
+    <!-- UNAPPEALING PAGE: NETFLIX -->
+    <h2>Page 2: Netflix (Unappealing Aspects)</h2>
+    <div class="page-type">✗ This page has UNAPPEALING aspects</div>
+
+    <table>
+        <tr>
+            <td><strong>a. URL of the Website</strong></td>
+            <td><a href="https://www.netflix.com" target="_blank">https://www.netflix.com</a></td>
+        </tr>
+        <tr>
+            <td><strong>b. Does this page use tables?</strong></td>
+            <td>No, Netflix also does not use traditional HTML tables. It uses CSS-based layouts with Flexbox and Grid to create the scrollable rows of content. While this is a modern approach, sometimes the overflow of content can make the page feel cluttered and overwhelming for users trying to find specific content.</td>
+        </tr>
+        <tr>
+            <td><strong>c. Does this page use CSS?</strong></td>
+            <td>Yes, Netflix heavily relies on CSS. The purposes include: (1) Page layout - organizing horizontal scrolling rows of movies and TV shows, (2) Text and color configuration - styling fonts and maintaining dark theme aesthetics, (3) Visual effects - animations when hovering over titles, background images, and transitions between sections. However, sometimes the excessive use of dark colors and overlapping elements can reduce readability.</td>
+        </tr>
+        <tr>
+            <td><strong>d. Is this page appealing or unappealing? List three reasons</strong></td>
+            <td><strong>Reason 1 (Unappealing):</strong> Content Overload - The page displays too many recommendations and content rows at once. Users are overwhelmed by endless scrolling and struggle to make a decision about what to watch. <br><br><strong>Reason 2 (Unappealing):</strong> Difficult Search Experience - While Netflix has a search function, finding specific content is sometimes challenging because the homepage prioritizes recommendations over user choice. The algorithm-driven suggestions can be repetitive. <br><br><strong>Reason 3 (Unappealing):</strong> Dark Theme and Readability Issues - The dark theme and small text sizes can strain the eyes during extended browsing. Some title cards have poor contrast, making text hard to read, especially on smaller screens.</td>
+        </tr>
+        <tr>
+            <td><strong>e. If this page is unappealing, what would you do to improve it?</strong></td>
+            <td><strong>Improvement 1:</strong> Simplify the homepage layout by reducing the number of recommendation rows. Show only the most relevant content categories and let users explore more through a dedicated "Browse" section. This reduces cognitive overload. <br><br><strong>Improvement 2:</strong> Enhance the search and filter functionality. Add better category filters, sorting options (by release date, rating, popularity), and a more prominent search bar to help users find content faster. <br><br><strong>Improvement 3:</strong> Improve readability by increasing font sizes, improving text contrast on dark backgrounds, and providing a light mode option. Add better visual hierarchy so important information stands out clearly.</td>
+        </tr>
+    </table>
+
+    <div style="margin-top: 40px; padding: 20px; background-color: #fff3cd; border-left: 4px solid #ff9800;">
+        <p><strong>Summary:</strong> Instagram's clean, modern design with excellent responsiveness makes it an appealing website. In contrast, Netflix, while visually impressive, suffers from content overload and readability issues that make it somewhat unappealing for extended browsing sessions.</p>
+    </div>
+
+</body>
+</html>
