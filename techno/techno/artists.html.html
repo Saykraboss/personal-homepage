@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techno / Artists</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#0c0c0c;color:#e2ddd5;font-family:'DM Sans',sans-serif;font-weight:300;}
+
+/* Üst Menü / Navigation */
+nav{
+  position:sticky;top:0;z-index:10;
+  background:rgba(12,12,12,0.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #272727;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2rem;height:52px;
+}
+.logo{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#e2ddd5;text-decoration:none;}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{
+  font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#888;text-decoration:none;transition:color .2s;
+}
+.nav-links a:hover, .nav-links a.active{color:#c0392b;}
+
+/* Hero Başlık Alanı */
+.content-hero {
+  padding:6rem 2rem 3rem;
+  border-bottom:1px solid #232323;
+}
+.page-num {font-family:'DM Mono',monospace;font-size:.65rem;color:#c0392b;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;}
+.page-title {font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,8rem);line-height:0.9;color:#e2ddd5;}
+
+/* Sanatçılar Liste Düzeni */
+.artists-list {
+  display: flex;
+  flex-direction: column;
+}
+.artist-row {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr; /* Sol bloğu resimler için biraz genişlettik */
+  border-bottom: 1px solid #232323;
+  transition: background 0.3s ease;
+}
+.artist-row:hover {
+  background: #111111;
+}
+
+/* Sol Taraf: Büyük İsim ve Resim Düzeni */
+.artist-name-block {
+  padding: 3rem 2rem;
+  border-right: 1px solid #232323;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.artist-name-block h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: #e2ddd5;
+  letter-spacing: 0.02em;
+}
+.artist-origin {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: #888;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* Büyütülmüş Sanatçı Resimleri Alanı */
+.artist-thumb {
+  width: 160px; /* 100px'den 160px'e büyütüldü */
+  height: 160px; /* 100px'den 160px'e büyütüldü */
+  border: 1px solid #333;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) contrast(110%);
+  transition: filter 0.3s ease, border-color 0.3s ease;
+}
+.artist-row:hover .artist-thumb {
+  filter: grayscale(0%) contrast(100%);
+  border-color: #c0392b;
+}
+
+/* Sağ Taraf: Detaylar */
+.artist-info-block {
+  padding: 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.artist-info-block p {
+  font-size: 0.98rem;
+  color: #9a9488;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Etiketler ve Detay Satırı */
+.artist-meta {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.meta-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: #c0392b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.meta-value {
+  font-size: 0.85rem;
+  color: #e2ddd5;
+}
+
+/* Alt Bilgi / Footer */
+footer{
+  padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+footer span{font-family:'DM Mono',monospace;font-size:.62rem;color:#444;letter-spacing:.1em;text-transform:uppercase;}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+  .artist-row {grid-template-columns: 1fr;}
+  .artist-name-block {border-right: none; border-bottom: 1px solid #232323; padding: 2rem;}
+  .artist-info-block {padding: 2rem;}
+  .artist-meta {flex-direction: column; align-items: flex-start; gap: 1rem;}
+  .artist-thumb {width: 140px; height: 140px;} /* Mobilde taşmasın diye hafif küçülme */
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Techno / Overview</a>
+  <ul class="nav-links">
+    <li><a href="history.html">History</a></li>
+    <li><a href="subgenres.html">Subgenres</a></li>
+    <li><a href="artists.html" class="active">Artists</a></li>
+    <li><a href="venues.html">Venues</a></li>
+    <li><a href="equipment.html">Equipment</a></li>
+    <li><a href="culture.html">Culture</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="content-hero">
+    <p class="page-num">Chapter 03</p>
+    <h1 class="page-title">The Architects of Sound</h1>
+  </div>
+
+  <div class="artists-list">
+    <!-- SANATÇI 1: FANTASM -->
+    <div class="artist-row">
+      <div class="artist-name-block">
+        <div>
+          <h2>Fantasm</h2>
+          <span class="artist-origin">Los Angeles, USA</span>
+        </div>
+        <div class="artist-thumb" style="background-image: url('fantasm.jpg');"></div>
+      </div>
+      <div class="artist-info-block">
+        <p>A powerhouse driving the new wave of underground industrial rave. Renowned for pushing sonic boundaries with an ultra-aggressive, cinematic aesthetic, Fantasm blends heavy nostalgic early rave synths with modern crushing, high-BPM industrial percussion.</p>
+        <div class="artist-meta">
+          <div class="meta-item">
+            <span class="meta-label">Key Style</span>
+            <span class="meta-value">Industrial Hard Techno</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Essential Track</span>
+            <span class="meta-value">Resonance / Mind Control</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SANATÇI 2: JUAN ATKINS -->
+    <div class="artist-row">
+      <div class="artist-name-block">
+        <div>
+          <h2>Juan Atkins</h2>
+          <span class="artist-origin">Detroit, USA</span>
+        </div>
+        <div class="artist-thumb" style="background-image: url('juan.jpg');"></div>
+      </div>
+      <div class="artist-info-block">
+        <p>Widely recognized as the "Originator" and Godfather of techno music. In the early 1980s, operating under his Model 500 alias, he coined the term 'techno' and laid down the fundamental blueprint by merging electronic funk with futuristic, industrial vision.</p>
+        <div class="artist-meta">
+          <div class="meta-item">
+            <span class="meta-label">Key Style</span>
+            <span class="meta-value">Detroit Techno, Electro</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Essential Track</span>
+            <span class="meta-value">Model 500 - No UFO's</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SANATÇI 3: JEFF MILLS -->
+    <div class="artist-row">
+      <div class="artist-name-block">
+        <div>
+          <h2>Jeff Mills</h2>
+          <span class="artist-origin">Detroit, USA</span>
+        </div>
+        <div class="artist-thumb" style="background-image: url('jeff.jpg');"></div>
+      </div>
+      <div class="artist-info-block">
+        <p>Known as "The Wizard" due to his legendary, lightning-fast mixing abilities on three turntables. As a co-founder of the Underground Resistance movement, his structural minimalism and space-age sci-fi concepts elevated techno into high art.</p>
+        <div class="artist-meta">
+          <div class="meta-item">
+            <span class="meta-label">Key Style</span>
+            <span class="meta-value">Minimal, Sci-Fi Techno</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Essential Track</span>
+            <span class="meta-value">The Bells</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SANATÇI 4: RICHIE HAWTIN -->
+    <div class="artist-row">
+      <div class="artist-name-block">
+        <div>
+          <h2>Richie Hawtin</h2>
+          <span class="artist-origin">Windsor, Canada</span>
+        </div>
+        <div class="artist-thumb" style="background-image: url('richie.jpg');"></div>
+      </div>
+      <div class="artist-info-block">
+        <p>Under his famous Plastikman moniker, Hawtin redefined the boundaries of Acid and Minimal techno. He has been a relentless pioneer in integrating new digital DJ technologies, software, and minimal aesthetics into live performances.</p>
+        <div class="artist-meta">
+          <div class="meta-item">
+            <span class="meta-label">Key Style</span>
+            <span class="meta-value">Minimal Techno, Acid</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Essential Track</span>
+            <span class="meta-value">Plastikman - Spastik</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SANATÇI 5: AMELIE LENS -->
+    <div class="artist-row">
+      <div class="artist-name-block">
+        <div>
+          <h2>Amelie Lens</h2>
+          <span class="artist-origin">Antwerp, Belgium</span>
+        </div>
+        <div class="artist-thumb" style="background-image: url('amelie.jpg');"></div>
+      </div>
+      <div class="artist-info-block">
+        <p>One of the most influential figures of the modern era, commanding massive global festival stages. Her signature sound delivers high-velocity, dark, and hypnotic rhythms mixed with heavy, pounding warehouse baselines.</p>
+        <div class="artist-meta">
+          <div class="meta-item">
+            <span class="meta-label">Key Style</span>
+            <span class="meta-value">Hard Techno, Peak Time</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Essential Track</span>
+            <span class="meta-value">Hypnotized</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <span>Yusuf Can Günel — Artists</span>
+  <a href="venues.html" style="font-family:'DM Mono',monospace; font-size:.62rem; color:#888; text-decoration:none; text-transform:uppercase;">Next Chapter →</a>
+</footer>
+
+</body>
+</html>

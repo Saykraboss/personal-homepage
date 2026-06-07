@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techno / Culture</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#0c0c0c;color:#e2ddd5;font-family:'DM Sans',sans-serif;font-weight:300;}
+
+/* Üst Menü / Navigation */
+nav{
+  position:sticky;top:0;z-index:10;
+  background:rgba(12,12,12,0.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #272727;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2rem;height:52px;
+}
+.logo{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#e2ddd5;text-decoration:none;}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{
+  font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#888;text-decoration:none;transition:color .2s;
+}
+.nav-links a:hover, .nav-links a.active{color:#c0392b;}
+
+/* Hero Başlık Alanı */
+.content-hero {
+  padding:6rem 2rem 4rem;
+  border-bottom:1px solid #232323;
+}
+.page-num {font-family:'DM Mono',monospace;font-size:.65rem;color:#c0392b;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;}
+.page-title {font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,8rem);line-height:0.9;color:#e2ddd5;}
+
+/* Kültür Blokları Düzeni (Asimetrik) */
+.culture-section {
+  display: flex;
+  flex-direction: column;
+}
+.culture-block {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  border-bottom: 1px solid #232323;
+}
+.culture-block.reverse {
+  grid-template-columns: 0.8fr 1.2fr;
+}
+
+/* Metin Alanı */
+.culture-text {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.culture-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: #c0392b;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+.culture-text h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: #e2ddd5;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+.culture-text p {
+  font-size: 1.05rem;
+  color: #9a9488;
+  line-height: 1.8;
+}
+
+/* Kendi Fotoğrafların İçin Hazırlanan Görsel Alanı */
+.culture-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #161616; /* Resim yüklenene kadar boş kalacak brutalist gri alan */
+  filter: grayscale(100%) contrast(120%) brightness(75%);
+  transition: filter 0.5s ease;
+}
+.culture-block:hover .culture-image {
+  filter: grayscale(15%) contrast(100%) brightness(90%);
+}
+.border-left { border-left: 1px solid #232323; }
+.border-right { border-right: 1px solid #232323; }
+
+/* Manifesto Alıntı Alanı */
+.manifesto-box {
+  padding: 8rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid #232323;
+  background: #0f0f0f;
+}
+.manifesto-box p {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  color: #e2ddd5;
+  max-width: 900px;
+  margin: 0 auto;
+  letter-spacing: 0.03em;
+}
+.manifesto-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: #c0392b;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-top: 2rem;
+  display: block;
+}
+
+/* Alt Bilgi / Footer */
+footer{
+  padding:1.5rem 2rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+footer span{font-family:'DM Mono',monospace;font-size:.62rem;color:#444;letter-spacing:.1em;text-transform:uppercase;}
+
+/* Mobil Uyumluluk */
+@media (max-width: 900px) {
+  .culture-block, .culture-block.reverse { grid-template-columns: 1fr; }
+  .culture-image { height: 320px; border: none !important; border-bottom: 1px solid #232323; }
+  .culture-text { padding: 3rem 1.5rem; }
+  .culture-block.reverse .culture-image { grid-row: 1; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Techno / Overview</a>
+  <ul class="nav-links">
+    <li><a href="history.html">History</a></li>
+    <li><a href="subgenres.html">Subgenres</a></li>
+    <li><a href="artists.html">Artists</a></li>
+    <li><a href="venues.html">Venues</a></li>
+    <li><a href="equipment.html">Equipment</a></li>
+    <li><a href="culture.html" class="active">Culture</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="content-hero">
+    <p class="page-num">Chapter 06</p>
+    <h1 class="page-title">THE WAY OF LIFE</h1>
+  </div>
+
+  <div class="culture-section">
+    <!-- BLOK 1: ALL BLACK GİYİM -->
+    <div class="culture-block">
+      <div class="culture-text">
+        <span class="culture-tag">The Aesthetic</span>
+        <h2>ALL BLACK EVERYTHING</h2>
+        <p>The techno subculture is universally recognized for its minimalist, utilitarian, and predominantly black dress code. Originating from a desire to strip away status symbols and superficial judgments, wearing black creates a unified grid on the dancefloor where ego fades and music becomes the sole focus.</p>
+      </div>
+      <div class="culture-image border-left" style="background-image: url('black.jpg');"></div>
+    </div>
+
+    <!-- BLOK 2: SAYGI VE ÖZGÜRLÜK -->
+    <div class="culture-block reverse">
+      <div class="culture-image border-right" style="background-image: url('freedom.jpg');"></div>
+      <div class="culture-text">
+        <span class="culture-tag">The Philosophy</span>
+        <h2>RESPECT & FREEDOM</h2>
+        <p>At the core of the true underground rave culture lies an unwritten code of absolute acceptance. Clubs operate as safe havens where individuals can express themselves without boundaries. Discrimination, harassment, and judgment are strictly left outside the iron gates, guarded heavily by the community.</p>
+      </div>
+    </div>
+
+    <!-- BLOK 3: TOPLULUK BİLİNCİ -->
+    <div class="culture-block">
+      <div class="culture-text">
+        <span class="culture-tag">The Experience</span>
+        <h2>THE COMMUNITY</h2>
+        <p>Techno is rarely a solitary experience; it is a collective ritual. The repetitive, hypnotic loops sync the heartbeats of thousands of strangers inside dark, smoke-filled rooms. This shared endurance through industrial soundscapes creates a unique bond—a temporary, egalitarian society built on rhythm.</p>
+      </div>
+      <div class="culture-image border-left" style="background-image: url('community.jpg');"></div>
+    </div>
+  </div>
+
+  <!-- BÜYÜK FİNAL MANİFESTOSU -->
+  <div class="manifesto-box">
+    <p>"WE LEAVE THE OUTSIDE WORLD AT THE DOOR. HERE, WE ARE ALL ONE, GUIDED BY THE KICK DRUM."</p>
+    <span class="manifesto-sub">End of Project — Rave On</span>
+  </div>
+</main>
+
+<footer>
+  <span>Yusuf Can Günel — Culture</span>
+  <span style="font-family:'DM Mono',monospace; font-size:.62rem; color:#c0392b;">● PROJECT COMPLETED</span>
+</footer>
+
+</body>
+</html>

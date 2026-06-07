@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techno / Overview</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#0c0c0c;color:#e2ddd5;font-family:'DM Sans',sans-serif;font-weight:300;}
+nav{
+  position:sticky;top:0;z-index:10;
+  background:rgba(12,12,12,0.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #272727;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2rem;height:52px;
+}
+.logo{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#e2ddd5;text-decoration:none;}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{
+  font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#888;text-decoration:none;transition:color .2s;
+}
+.nav-links a:hover, .nav-links a.active{color:#c0392b;}
+
+.hero{
+  min-height:calc(100vh - 52px);
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  padding:4rem 2rem 2.5rem;
+  border-bottom:1px solid #232323;
+  position:relative;overflow:hidden;
+  /* Rotterdam Rave ruhunu yansıtan otomatik internet görseli ve karanlık gradyan ayarı */
+  background: linear-gradient(rgba(12,12,12,0.65), rgba(12,12,12,0.85)), url('https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2;}
+.hero-label{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:#888;margin-bottom:1rem;}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,18vw,14rem);line-height:.88;letter-spacing:.01em;color:#e2ddd5;}
+.hero-title .red{color:#c0392b;}
+.hero-year{font-family:'DM Mono',monospace;font-size:.65rem;color:#888;letter-spacing:.1em;text-transform:uppercase;text-align:right;line-height:2;}
+.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;position:relative;z-index:2;}
+
+/* Büyük ve dikkat çeken açıklama metni */
+.hero-desc{max-width:580px;font-size:clamp(1.1rem, 2.5vw, 1.4rem);color:#e2ddd5;line-height:1.6;font-weight:400;}
+
+.ticker{font-family:'DM Mono',monospace;font-size:.65rem;color:#888;letter-spacing:.08em;text-transform:uppercase;text-align:right;line-height:2;}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);}
+.card{
+  background:#111;
+  border-right:1px solid #232323;
+  border-bottom:1px solid #232323;
+  padding:2.2rem 2rem 2.8rem;
+  text-decoration:none;color:#e2ddd5;
+  display:block;transition:background .2s;
+  position:relative;
+}
+.card:nth-child(3n){border-right:none;}
+.card:hover{background:#171717;}
+.card:hover .arrow{opacity:1;transform:translateX(0);color:#c0392b;}
+
+.card-num{
+  font-family:'DM Mono',monospace;font-size:.62rem;
+  letter-spacing:.12em;color:#666;margin-bottom:1rem;
+}
+.card-title{
+  font-family:'Bebas Neue',sans-serif;font-size:1.85rem;
+  letter-spacing:.03em;line-height:1;margin-bottom:.8rem;
+  color:#ddd8cf;
+}
+.card-desc{
+  font-size:.85rem;color:#837e78;
+  line-height:1.7;
+}
+.arrow{
+  position:absolute;bottom:1.8rem;right:1.8rem;
+  font-family:'DM Mono',monospace;font-size:.9rem;color:#666;
+  opacity:0;transform:translateX(-6px);
+  transition:opacity .2s,transform .2s;
+}
+
+footer{
+  border-top:1px solid #232323;
+  padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+footer span{font-family:'DM Mono',monospace;font-size:.62rem;color:#444;letter-spacing:.1em;text-transform:uppercase;}
+
+@media (max-width: 768px) {
+  .grid {grid-template-columns: 1fr;}
+  .card {border-right: none;}
+  .hero-top, .hero-bottom {flex-direction: column; gap: 1.5rem;}
+  .hero-year, .ticker {text-align: left;}
+  .nav-links {display: none;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Techno / Overview</a>
+  <ul class="nav-links">
+    <li><a href="history.html">History</a></li>
+    <li><a href="subgenres.html">Subgenres</a></li>
+    <li><a href="artists.html">Artists</a></li>
+    <li><a href="venues.html">Venues</a></li>
+    <li><a href="equipment.html">Equipment</a></li>
+    <li><a href="culture.html">Culture</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-top">
+    <div>
+      <p class="hero-label">A deep dive into</p>
+      <h1 class="hero-title">TECH<span class="red">NO</span></h1>
+    </div>
+    <div class="hero-year">
+      <p>Detroit — 1985</p>
+      <p>Berlin — 1991</p>
+      <p>Global — Now</p>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      Techno is more than a genre — it is a philosophy of sound, community, and resistance.
+      Born in Detroit in the 1980s, shaped by Berlin's underground, it continues to evolve
+      across clubs and warehouses worldwide.
+    </p>
+    <div class="ticker">
+      <p>130 – 150 BPM</p>
+      <p>Six chapters below</p>
+    </div>
+  </div>
+</section>
+
+<div class="grid">
+  <a class="card" href="history.html">
+    <p class="card-num">01 / History</p>
+    <h2 class="card-title">ORIGINS &amp; EVOLUTION</h2>
+    <p class="card-desc">From the factories of Detroit to the bunkers of Berlin — four decades of techno history.</p>
+    <span class="arrow">→</span>
+  </a>
+  <a class="card" href="subgenres.html">
+    <p class="card-num">02 / Subgenres</p>
+    <h2 class="card-title">SOUNDS &amp; STYLES</h2>
+    <p class="card-desc">Acid, minimal, industrial, hard techno, dub techno and beyond.</p>
+    <span class="arrow">→</span>
+  </a>
+  <a class="card" href="artists.html">
+    <p class="card-num">03 / Artists</p>
+    <h2 class="card-title">PIONEERS &amp; ICONS</h2>
+    <p class="card-desc">From the Belleville Three to the new generation shaping the sound today.</p>
+    <span class="arrow">→</span>
+  </a>
+  <a class="card" href="venues.html">
+    <p class="card-num">04 / Venues</p>
+    <h2 class="card-title">CLUBS &amp; SPACES</h2>
+    <p class="card-desc">Berghain, Tresor, Fabric, Shelter — the rooms that shaped the culture.</p>
+    <span class="arrow">→</span>
+  </a>
+  <a class="card" href="equipment.html">
+    <p class="card-num">05 / Equipment</p>
+    <h2 class="card-title">MACHINES &amp; TOOLS</h2>
+    <p class="card-desc">Roland TR-909, TB-303, Moog synthesizers, modular rigs.</p>
+    <span class="arrow">→</span>
+  </a>
+  <a class="card" href="culture.html">
+    <p class="card-num">06 / Culture</p>
+    <h2 class="card-title">COMMUNITY &amp; VALUES</h2>
+    <p class="card-desc">Inclusivity, darkness, dance as ritual — the shared language of the scene.</p>
+    <span class="arrow">→</span>
+  </a>
+</div>
+
+<footer>
+  <span>Yusuf Can Günel — Techno</span>
+  <span>6 Chapters</span>
+</footer>
+
+</body>
+</html>
